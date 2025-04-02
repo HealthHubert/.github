@@ -36,7 +36,7 @@ graph TD
 ```
 
 ## DTU Courses involving development of HealthHubert
-- 34315 IOT (Spring 2024):         Internet of things - application and infrastructure implementation
+- 34315 IoT (Spring 2024):         Internet of things - application and infrastructure implementation
 - Special course (Autumn 2024):    Rethinking medication management: Advanced design and usability of an IoT-integrated system 
 - Special course (Spring 2025):    Forbedring af brugervenlighed i tablet dispenser design
 
