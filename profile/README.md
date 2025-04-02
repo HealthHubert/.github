@@ -22,20 +22,18 @@ graph TD
 
     broker[(MQTT Broker)]
 
-    arduino --> dispenser
-    arduino --> pi
-    
-    pi <--> broker
-    pi <--> fastapi
-    
     mqttclient <--> broker
-    db <--> mqttclient
-    db <--> fastapi
+    db <--> |SQL| mqttclient
+    db <--> |SQL| fastapi
+
+    flutter <--> |MQTT| broker
+    flutter <--> |HTTP| fastapi
+
+    arduino --> dispenser
+    arduino <--> |I2C| pi
     
-    flutter <--> broker
-    flutter <--> fastapi
-
-
+    pi <--> |MQTT| broker
+    pi <--> |HTTP| fastapi
 ```
 
 ## DTU Courses involving development of HealthHubert
