@@ -1,7 +1,7 @@
 # HealthHubert
 Tablet dispenser system made in cooperation with Technical University of Denmark
 
-```m̀ermaid
+```mermaid
 graph TD
     A[API]
     B[DB Server]
