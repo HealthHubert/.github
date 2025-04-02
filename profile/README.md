@@ -3,11 +3,39 @@ Tablet dispenser system made in cooperation with Technical University of Denmark
 
 ```mermaid
 graph TD
-    A[API]
-    B[DB Server]
-    C[Firmware]
-    D[MQTT Server]
-    E[Flutter]
+    subgraph backend[BACKEND]
+        db[(Database)]
+        fastapi[API]
+        mqttclient[MQTT Client]
+    end
+
+
+    subgraph hardware[Hardware]
+        dispenser[Dispenser]
+        arduino[Arduino]
+        pi[Raspberry Pi]
+    end
+
+    subgraph frontend[Frontend]
+        flutter[Flutter]
+    end
+
+    broker[(MQTT Broker)]
+
+    arduino --> dispenser
+    arduino --> pi
+    
+    pi <--> broker
+    pi <--> fastapi
+    
+    mqttclient <--> broker
+    db <--> mqttclient
+    db <--> fastapi
+    
+    flutter <--> broker
+    flutter <--> fastapi
+
+
 ```
 
 ## DTU Courses involving development of HealthHubert
