@@ -26,7 +26,6 @@ graph TD
     db <--> |SQL| mqttclient
     db <--> |SQL| fastapi
 
-    flutter <--> |MQTT| broker
     flutter <--> |HTTP| fastapi
 
     arduino --> dispenser
