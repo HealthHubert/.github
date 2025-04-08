@@ -26,13 +26,13 @@ graph TD
     db <--> |SQL| mqttclient
     db <--> |SQL| fastapi
 
-    flutter <--> |HTTP| fastapi
+    flutter <--> |HTTPS| fastapi
 
     arduino --> dispenser
     arduino <--> |I2C| pi
     
     pi <--> |MQTT| broker
-    pi <--> |HTTP| fastapi
+    pi <--> |HTTPS| fastapi
 ```
 
 ## DTU Courses involving development of HealthHubert
