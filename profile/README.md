@@ -7,6 +7,7 @@ graph TD
         db[(Database)]
         fastapi[API]
         mqttclient[MQTT Client]
+        broker[(MQTT Broker)]
     end
 
 
@@ -20,7 +21,7 @@ graph TD
         flutter[Flutter]
     end
 
-    broker[(MQTT Broker)]
+    
 
     mqttclient <--> broker
     db <--> |SQL| mqttclient
