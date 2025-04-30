@@ -5,14 +5,18 @@ Tablet dispenser system made in cooperation with Technical University of Denmark
 graph TD
     subgraph backend[Backend]
         db[(Database)]
-        fastapi[API]
-        mqttclient[MQTT Client]
         broker[(MQTT Broker)]
+
+        subgraph fast[FastAPI]
+            fastapi[fastapi]
+            fastapi-mqtt[fastapi-mqtt]
+        end
+        
     end
 
 
     subgraph hardware[Hardware]
-        dispenser[Dispenser]
+        dispenser[Dispensing mechanism]
         arduino[Arduino]
         pi[Raspberry Pi]
     end
@@ -23,8 +27,8 @@ graph TD
 
     
 
-    mqttclient <--> broker
-    db <--> |SQL| mqttclient
+    fastapi-mqtt <--> broker
+    db <--> |SQL| fastapi-mqtt
     db <--> |SQL| fastapi
 
     flutter <--> |HTTPS| fastapi
