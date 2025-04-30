@@ -4,14 +4,14 @@ Tablet dispenser system made in cooperation with Technical University of Denmark
 ```mermaid
 graph TD
     subgraph backend[Backend]
-        db[(Database)]
-        broker[(MQTT Broker)]
+        db[(PostgreSQL database)]
+        broker[(Mosquitto MQTT broker)]
 
         subgraph fast[FastAPI]
             fastapi[fastapi]
             fastapi-mqtt[fastapi-mqtt]
         end
-        
+
     end
 
 
