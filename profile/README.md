@@ -17,7 +17,6 @@ graph TD
 
     subgraph hardware[Hardware]
         dispenser[Dispensing mechanism]
-        arduino[Arduino]
         pi[Raspberry Pi]
     end
 
@@ -33,8 +32,7 @@ graph TD
 
     flutter <--> |HTTPS| fastapi
 
-    arduino --> dispenser
-    arduino <--> |I2C| pi
+    pi --> |GPIO| dispenser
     
     pi <--> |MQTT| broker
     pi <--> |HTTPS| fastapi
