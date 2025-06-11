@@ -9,7 +9,7 @@ graph TD
 
         subgraph fast[FastAPI]
             fastapi[fastapi]
-            fastapi-mqtt[fastapi-mqtt]
+            mqtt_client[Eclipse Paho MQTT]
         end
 
     end
@@ -26,8 +26,8 @@ graph TD
 
     
 
-    fastapi-mqtt <--> broker
-    db <--> |SQL| fastapi-mqtt
+    mqtt_client <--> broker
+    fastapi <--> mqtt_client
     db <--> |SQL| fastapi
 
     flutter <--> |HTTPS| fastapi
